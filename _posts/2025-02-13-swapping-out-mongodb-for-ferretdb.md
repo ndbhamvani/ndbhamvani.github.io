@@ -2,13 +2,12 @@
 layout: post
 title: "Swapping out MongoDB for FerretDB v2.0 (RC)"
 date: 2025-02-13
+comments: true
 categories: [blog, tech]
 ---
 
 ![Image of a Ferret](https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Mustela_putorius_furo_profile.JPG/640px-Mustela_putorius_furo_profile.jpg)
 {: .center-image }
-
-### Introduction
 MongoDB dominates the world of NoSQL databases and is often appreciated for its developer experience as a result of its mature ecosystem of drivers, libraries and tools. Well, I recently read about a viable alternative called FerretDB which is close to releasing v2.0 which now incorporates a compelling set of components. So, I thought to do a quick test and see how it goes! For the purpose of this test, the release candidate (RC) version was used since the full 2.0 release is not quite ready yet.
 
 <br />
@@ -21,7 +20,7 @@ For most intents and purposes, MongoDB's Server Side Public License (SSPL) is as
  - Where enterprise policies restrict the usage of tools or services that are not fully open source.
 
  That second point is important. MongoDB benefits from being open, but one can never predict what goes on in the minds of their executives, especially during the AI-filled sugar-rush we're living through!
- 
+
 <br />
 
 ### Unleash the Ferret!
