@@ -29,7 +29,7 @@ Firstly, FerretDB on its own is not going to store anything because it's essenti
 <figure>
     <img src="/images/ferret-db-postgres-documentdb.png" alt="How FerretDb works">
     <figcaption style="background-color: #f0f0f0; font-size: smaller; padding:2px 5px">How FerretDB Works.
-    <small style="float: right; padding-right:5px">Source: <a href="https://docs.ferretdb.io">Ferret DB Documentation</a></small></figcaption>
+    <small style="float: right; padding-right:5px">Source: <a href="https://docs.ferretdb.io">Ferret DB Docs</a></small></figcaption>
 </figure>
 
 <br />
