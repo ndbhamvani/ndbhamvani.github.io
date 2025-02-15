@@ -8,7 +8,7 @@ categories: [blog, tech]
 
 ![Image of a Ferret](https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Mustela_putorius_furo_profile.JPG/640px-Mustela_putorius_furo_profile.jpg)
 {: .center-image }
-MongoDB dominates the world of NoSQL databases and is often appreciated for its developer experience as a result of its mature ecosystem of drivers, libraries and tools. Well, I recently read about a viable alternative called FerretDB which is close to releasing v2.0 which now incorporates a compelling set of components. So, I thought to do a quick test and see how it goes! For the purpose of this test, the release candidate (RC) version was used since the full 2.0 release is not quite ready yet.
+MongoDB dominates the NoSQL database world and is often praised for its developer experience, thanks to its mature ecosystem of drivers, libraries and tools. I recently read about a viable alternative, FerretDB, which is nearing its 2.0 release and now includes a compelling set of components. So, I thought I'd do a quick test and see how it performs! For this test, I used the release candidate (RC) version, as the full 2.0 release isn't quite ready yet.
 
 <br />
 
@@ -24,7 +24,7 @@ For most intents and purposes, MongoDB's Server Side Public License (SSPL) is as
 <br />
 
 ### Unleash the Ferret!
-Firstly, FerretDB on its own is not going to store anything because it's essentially a proxy for the MongoDB API; a proper database is still needed and for this the FerretDB team have focused on Postgres with its huge community of users and unstructured data storage. Unlike MongoDB, however, Postgres stores unstructured data in JSONB format, while MongoDB uses BSON; both are binary and therefore provide efficiency and indexing, but still different. Microsoft's DocumentDB extension for Postgres provides the missing piece, enabling storage in the BSON format and enabling a smooth pathway between the MongoDB API and the ultimate storage destination, Postgres (see below).
+Firstly, FerretDB on its own is not going to store anything because it's essentially a proxy for the MongoDB API; a proper database is still needed and for this the FerretDB team have focused on Postgres with its huge community of users and possibility of unstructured data storage despite its relational nature. Unlike MongoDB, however, Postgres stores unstructured data in JSONB format, while MongoDB uses BSON; both are binary and therefore provide efficiency and indexing, but still different. Microsoft's DocumentDB extension for Postgres provides the missing piece, enabling storage in the BSON format and enabling a smooth pathway between the MongoDB API and the ultimate storage destination, Postgres (see below).
 
 <figure>
     <img src="/images/ferret-db-postgres-documentdb.png" alt="How FerretDb works">
@@ -35,7 +35,7 @@ Firstly, FerretDB on its own is not going to store anything because it's essenti
 <br />
 
 ### Evaluating FerretDB Locally on Linux
-Given that most deployments in production happen on Linux servers, to me it makes sense to then develop on a linux platform. For the purposes of this evaluation, I took a currently under development private project where MongoDB has already been used. The idea being that I'd make minimal adjustments when swapping MongoDB for FerretDB. After an initial unsuccessful attempt at installing the above components separately using Linux native packages, I quickly utilised their production image, generated via Docker Compose, which wraps up all necessary components in a single networked image. In the spirit of Open Source, I used Podman Compose and Podman Desktop, to see how these stacked up against native Docker tools (see below).
+Given that most deployments in production happen on Linux servers, to me it makes sense to then develop on a linux platform. For the purposes of this evaluation, I took a currently under development private project where MongoDB has already been used. The idea being that I should only need minimal adjustments when swapping MongoDB for FerretDB. After an initial unsuccessful attempt at installing the above components separately using Linux native packages, I quickly utilised FerretDB's production image, generated via Docker Compose, which wraps up all necessary components in a single networked image. In the spirit of Open Source, I used Podman Compose and Podman Desktop, to see how these stacked up against native Docker tools (see below).
 
 #### Docker Compose YAML (Source: <a href="https://docs.ferretdb.io/installation/ferretdb/docker/">FerretDB Production Image</a>):
 
@@ -82,7 +82,7 @@ The above solution worked like a charm, I could quite literally 'swap' MongoDB f
 <br />
 
 ### Closing Comments:
-This was only a very basic test and a much more comprehensive evaluation is required before getting too excited. As of v2.0, FerretDB is said to have achieved compatibility with v6.0 of MongoDB. However, we'll only know the extent of this claim when utilising in anger, to ensure there are no show-stopping feature omissions. Nevertheless, for the open source absolutists, FerretDB is a clever solution built on top of solid foundations. It will be interesting to see how MongoDB Inc responds. My personal take is that they shouldn't really mind: anything that entrenches the MongoDB API and tooling within the NoSQL database space may 'secretly' be seen as a positive? 
+This was only a very basic test and a much more comprehensive evaluation is required before getting too excited. As of v2.0, FerretDB is said to have achieved compatibility with v6.0 of MongoDB. However, we'll only know the extent of this claim when testing in anger, to ensure there are no show-stopping feature omissions. Nevertheless, for the open source absolutists, FerretDB is a clever solution built on top of solid foundations. It will be interesting to see how MongoDB Inc responds. My personal take is that they shouldn't really mind: anything that entrenches the MongoDB API and tooling within the NoSQL database space may 'secretly' be seen as a positive? 
 
 <br />
 
